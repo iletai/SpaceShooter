@@ -20,7 +20,6 @@ public class SelectLevelGame : MonoBehaviour
         loadingScene.SetActive(true);
         while (!operation.isDone)
         {
-            
             yield return null;
         }
     }
