@@ -6,8 +6,6 @@ public class LevelLoader : MonoBehaviour
 {
     public void LoadLevel(int sceneIndex)
     {
-        //AsyncOperation operation = SceneManager LoadSceneManager(sceneIndex);
-
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
