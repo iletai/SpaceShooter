@@ -3,15 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SelectLevelGame : MonoBehaviour
 {
 
     public GameObject loadingScene;
-     
-    public void LoadLevel(int sceneIndex)
+    public int sceneValue;
+
+    public void MoveScene()
     {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
+        StartCoroutine(LoadAsynchronously(sceneValue));
+    }
+
+    public void GetLevel(int sceneIndex)
+    {
+        sceneValue = sceneIndex;
+        Debug.Log(sceneIndex);
+    }
+
+    public void LoadLevel(Text levelText)
+    {
+        levelText.color = Color.white;
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
