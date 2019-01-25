@@ -9,6 +9,15 @@ public class SelectLevelGame : MonoBehaviour
 {
 
     public GameObject loadingScene;
+    public Text level1;
+    public Text level2;
+    public Text level3;
+
+    enum ColorText
+    {
+        WHITE,
+        BLACK
+    }
     public int sceneValue;
 
     public void MoveScene()
@@ -19,12 +28,28 @@ public class SelectLevelGame : MonoBehaviour
     public void GetLevel(int sceneIndex)
     {
         sceneValue = sceneIndex;
+        if (sceneIndex == 2)
+        {
+            level2.color = Color.black;
+            level3.color = Color.black;
+        }
+        if (sceneIndex == 3)
+        {
+            level1.color = Color.black;
+            level3.color = Color.black;
+        }
+        if (sceneIndex == 4)
+        {
+            level1.color = Color.black;
+            level2.color = Color.black;
+        }
         Debug.Log(sceneIndex);
     }
 
     public void LoadLevel(Text levelText)
     {
-        levelText.color = Color.white;
+         levelText.color = Color.white;
+        ReSetColorButton();
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
@@ -36,4 +61,10 @@ public class SelectLevelGame : MonoBehaviour
             yield return null;
         }
     }
+
+    void ReSetColorButton()
+    {
+        
+    }
+
 }
