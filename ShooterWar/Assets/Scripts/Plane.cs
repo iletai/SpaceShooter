@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plane : ObjectManager
+public class Plane : AttackManager
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,11 @@ public class Plane : ObjectManager
         {
             transform.position = Vector3.Lerp(transform.position, transform.position - Vector3.left, speedMove * Time.deltaTime);
         }
+
         if (Input.GetAxis("Vertical") > 0) //Move up
         {
             transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.forward, speedMove * Time.deltaTime);
+            Debug.Log("Forward");
 
         }
         else if (Input.GetAxis("Vertical") < 0) //Move down

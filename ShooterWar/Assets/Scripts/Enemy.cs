@@ -8,6 +8,7 @@ public class Enemy : ProjectManager
     public GameObject enemyBar;
     public float moveRightDistance = 3.0f;
     public Transform enemyObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +20,9 @@ public class Enemy : ProjectManager
     {
         if (enemy.velocity.x < 300)
             Move();
-        Debug.Log(enemyObject.position.y);
 
         if (enemyBar.transform.position.x > 5)
-        {
             DestroyGameObject();
-            Debug.Log("detroy");
-        }
     }
 
     void Move()

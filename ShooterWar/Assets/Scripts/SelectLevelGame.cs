@@ -18,6 +18,7 @@ public class SelectLevelGame : MonoBehaviour
         WHITE,
         BLACK
     }
+
     public int sceneValue;
 
     public void MoveScene()
@@ -43,12 +44,12 @@ public class SelectLevelGame : MonoBehaviour
             level1.color = Color.black;
             level2.color = Color.black;
         }
-        Debug.Log(sceneIndex);
+
     }
 
     public void LoadLevel(Text levelText)
     {
-         levelText.color = Color.white;
+        levelText.color = Color.white;
         ReSetColorButton();
     }
 
@@ -64,7 +65,7 @@ public class SelectLevelGame : MonoBehaviour
 
     void ReSetColorButton()
     {
-        
+
     }
 
 }
