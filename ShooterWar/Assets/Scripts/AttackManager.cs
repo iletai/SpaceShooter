@@ -19,8 +19,9 @@ public class AttackManager : MonoBehaviour
     public Vector3 RocketRotation;
 
     [Header("Other General")]
-    public bool isCanShoot;
+    public bool isCanShoot = true;
     public GameManager GameMgr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +36,14 @@ public class AttackManager : MonoBehaviour
 
     protected void EnableShootRocket()
     {
-        
+        isCanShoot = true;
     }
 
+    protected void ShooterRocket()
+    {
+        GameObject.Instantiate(RocketPrefabLeft, transform.position + Vector3.forward * RocketDistanceForward + Vector3.right * RocketDistanceRight,
+            Quaternion.Euler(RocketRotation));
+        Invoke("EnableShootRocket", RocketDelayAfterShoot);
+    }
     
 }

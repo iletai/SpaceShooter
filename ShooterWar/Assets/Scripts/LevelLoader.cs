@@ -7,6 +7,10 @@ public class LevelLoader : MonoBehaviour
     public GameObject loadingScene;
     public Slider slider;
 
+    /// <summary>
+    /// Load scene by parammeter sceneIndex
+    /// </summary>
+    /// <param name="sceneIndex"></param>
     public void LoadLevel(int sceneIndex)
     {
         StartCoroutine(LoadAsynchronously(sceneIndex));

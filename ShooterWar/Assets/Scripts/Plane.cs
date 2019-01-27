@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Plane : AttackManager
 {
+    public UIManager GameUI;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +27,18 @@ public class Plane : AttackManager
         if (Input.GetAxis("Vertical") > 0) //Move up
         {
             transform.position = Vector3.Lerp(transform.position, transform.position + Vector3.forward, speedMove * Time.deltaTime);
-            Debug.Log("Forward");
-
+            Debug.Log("MoveUP");
         }
         else if (Input.GetAxis("Vertical") < 0) //Move down
         {
             transform.position = Vector3.Lerp(transform.position, transform.position - Vector3.forward, speedMove * Time.deltaTime);
+            Debug.Log("MoveDown");
+        }
+
+        if (Input.GetAxis("Jump") > 0 && isCanShoot)
+        {
+            isCanShoot = false;
+            ShooterRocket();
         }
     }
 }

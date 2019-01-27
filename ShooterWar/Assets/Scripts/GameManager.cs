@@ -8,13 +8,14 @@ public class GameManager : MonoBehaviour
     public UIManager UserInterfaceManager;
 
     [Header("Spawning")]
+    public bool SpawnEnemy;
     public GameObject Player;
   
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        TriggerPlayer(true);
     }
 
     // Update is called once per frame
@@ -30,5 +31,10 @@ public class GameManager : MonoBehaviour
     void TriggerPlayer(bool visible)
     {
         Player.SetActive(visible);
+    }
+
+    void EndGamePlay()
+    {
+
     }
 }
