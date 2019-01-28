@@ -2,36 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : ProjectManager
+public class Enemy : AttackManager
 {
-    public Rigidbody2D enemy;
-    public GameObject enemyBar;
-    public float moveRightDistance = 3.0f;
-    public Transform enemyObject;
+
+    private UnityEngine.AI.NavMeshAgent navMeshAgent;
+    private GameObject player;
+    private float distanceToPlayer = 4f;
 
     // Start is called before the first frame update
     void Start()
     {
+        navMeshAgent.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        player = GameObject.FindObjectOfType<Plane>().gameObject;
+        GameMgr = GameObject.FindObjectOfType<GameManager>();
 
+        navMeshAgent.SetDestination(player.transform.position + Vector3.up * distanceToPlayer);
+        navMeshAgent.speed = speedMove;
+
+        navMeshAgent.Resume();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemy.velocity.x < 300)
-            Move();
+       
+    }
 
-        if (enemyBar.transform.position.x > 5)
-            DestroyGameObject();
+    private void GetNextLocation()
+    {
+        Vector3 destination = player.transform.position + Vector3.up * distanceToPlayer + Random.insideUnitSphere * 1;
     }
 
     void Move()
     {
-        enemy.velocity = Vector2.right * moveRightDistance;
+    
     }
 
     void DestroyGameObject()
     {
-        Destroy(enemyBar);
+       
     }
 }

@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     [Header("Spawning")]
     public bool SpawnEnemy;
     public GameObject Player;
-  
+    public List<GameObject> EnemyObject = new List<GameObject>();
+    public List<GameObject> SpawnPoint = new List<GameObject>();
     
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     void EndGamePlay()
     {
+        TriggerPlayer(false);
 
     }
 }
