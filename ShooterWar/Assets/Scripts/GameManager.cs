@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         TriggerPlayer(true);
+        if (SpawnEnemy)
+            CreateAndSpawnEnemy();
+
     }
 
     // Update is called once per frame
@@ -38,5 +41,17 @@ public class GameManager : MonoBehaviour
     {
         TriggerPlayer(false);
 
+    }
+
+    /// <summary>
+    /// 3 point respawn enemy
+    /// </summary>
+    public void CreateAndSpawnEnemy()
+    {
+        int enemy = Random.Range(0, EnemyObject.Count);
+        int spawnLocation = Random.Range(0, SpawnPoint.Count);
+
+        GameObject.Instantiate(EnemyObject[enemy], SpawnPoint[spawnLocation].transform.position, Quaternion.identity);
+        Invoke("CreateAndSpawnEnemy", Random.Range(3, 10));
     }
 }

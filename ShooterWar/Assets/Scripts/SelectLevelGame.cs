@@ -29,22 +29,23 @@ public class SelectLevelGame : MonoBehaviour
     public void GetLevel(int sceneIndex)
     {
         sceneValue = sceneIndex;
-        if (sceneIndex == 2)
+        switch (sceneIndex)
         {
-            level2.color = Color.black;
-            level3.color = Color.black;
+            case 2:
+                level2.color = Color.black;
+                level3.color = Color.black;
+                break;
+            case 3:
+                level1.color = Color.black;
+                level3.color = Color.black;
+                break;
+            case 4:
+                level1.color = Color.black;
+                level2.color = Color.black;
+                break;
+            default:
+                break;
         }
-        if (sceneIndex == 3)
-        {
-            level1.color = Color.black;
-            level3.color = Color.black;
-        }
-        if (sceneIndex == 4)
-        {
-            level1.color = Color.black;
-            level2.color = Color.black;
-        }
-
     }
 
     public void LoadLevel(Text levelText)

@@ -16,30 +16,32 @@ public class Enemy : AttackManager
         player = GameObject.FindObjectOfType<Plane>().gameObject;
         GameMgr = GameObject.FindObjectOfType<GameManager>();
 
-        navMeshAgent.SetDestination(player.transform.position + Vector3.up * distanceToPlayer);
+        navMeshAgent.SetDestination(player.transform.position + Vector3.forward * distanceToPlayer);
         navMeshAgent.speed = speedMove;
 
         navMeshAgent.Resume();
+
+        GoToLocation();
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        transform.rotation = Quaternion.identity;
+
+        if (isCanShoot)
+        {
+            isCanShoot = false;
+            ShooterRocket();
+        }
     }
 
-    private void GetNextLocation()
+    private void GoToLocation()
     {
         Vector3 destination = player.transform.position + Vector3.up * distanceToPlayer + Random.insideUnitSphere * 1;
-    }
+        destination.y = transform.position.y;
 
-    void Move()
-    {
-    
-    }
-
-    void DestroyGameObject()
-    {
-       
+        navMeshAgent.SetDestination(destination);
+        Invoke("GoToLocation", 0.5f);
     }
 }

@@ -19,8 +19,8 @@ public class AttackManager : MonoBehaviour
     public Vector3 RocketRotation;
 
     [Header("Other General")]
-    public bool isCanShoot = true;
     public GameManager GameMgr;
+    protected bool isCanShoot = true;
 
     // Start is called before the first frame update
     void Start()
