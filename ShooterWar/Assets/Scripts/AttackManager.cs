@@ -7,6 +7,7 @@ public class AttackManager : MonoBehaviour
     [Header("Player General")]
     public int LifeCount = 5;
     public float speedMove;
+    public float speedEnemy;
     public float RocketDelayAfterShoot;
     [Range(3, 15)]
     public float SpeedRocket;
@@ -41,9 +42,8 @@ public class AttackManager : MonoBehaviour
 
     protected void ShooterRocket()
     {
-        GameObject.Instantiate(RocketPrefabLeft, transform.position + Vector3.forward * RocketDistanceForward + Vector3.right * RocketDistanceRight,
-            Quaternion.Euler(RocketRotation));
-        Invoke("EnableShootRocket", RocketDelayAfterShoot);
+        GameObject.Instantiate(RocketPrefabLeft, transform.position + Vector3.forward * RocketDistanceForward + Vector3.right * RocketDistanceRight,Quaternion.Euler(RocketRotation));
+        Invoke("EnableShootRocket", RocketDelayAfterShoot);//this line delay after shoot of enemy or player
     }
     
 }
