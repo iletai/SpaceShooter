@@ -6,15 +6,13 @@ public class AttackManager : MonoBehaviour
 {
     [Header("Player General")]
     public int LifeCount = 5;
+    [Range(3,15)]
     public float speedMove;
-    public float speedEnemy;
     public float RocketDelayAfterShoot;
-    [Range(3, 15)]
-    public float SpeedRocket;
+   
 
     [Header("Rocket General")]
-    public GameObject RocketPrefabLeft;
-    public GameObject RocketPrefabRight;
+    public GameObject RocketPrefab;
     public float RocketDistanceForward;
     public float RocketDistanceRight;
     public Vector3 RocketRotation;
@@ -23,17 +21,6 @@ public class AttackManager : MonoBehaviour
     public GameManager GameMgr;
     protected bool isCanShoot = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     protected void EnableShootRocket()
     {
@@ -42,7 +29,7 @@ public class AttackManager : MonoBehaviour
 
     protected void ShooterRocket()
     {
-        GameObject.Instantiate(RocketPrefabLeft, transform.position + Vector3.forward * RocketDistanceForward + Vector3.right * RocketDistanceRight,Quaternion.Euler(RocketRotation));
+        GameObject.Instantiate(RocketPrefab, transform.position + Vector3.forward * RocketDistanceForward + Vector3.right * RocketDistanceRight,Quaternion.Euler(RocketRotation));
         Invoke("EnableShootRocket", RocketDelayAfterShoot);//this line delay after shoot of enemy or player
     }
     

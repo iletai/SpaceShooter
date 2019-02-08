@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : AttackManager
 {
-
     public Transform target;
-    public float speed;
+
+    public float speedEnemy;
     public float overDistance;
+    public float delayEnemy;
 
     void Start()
     {
@@ -16,9 +17,20 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position,target.position) > overDistance)
+            if (Vector2.Distance(transform.position,target.position) > overDistance)
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speedEnemy * Time.deltaTime);
+
+        if (isCanShoot)
         {
-             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+            isCanShoot = false;
+            SetDelayAfterShoot();
+            ShooterRocket();
         }
+    }
+
+    public void SetDelayAfterShoot()
+    {
+        RocketDelayAfterShoot = delayEnemy;
     }
 }

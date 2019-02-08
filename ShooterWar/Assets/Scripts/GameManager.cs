@@ -17,9 +17,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         TriggerPlayer(true);
+
         if (SpawnEnemy)
             CreateAndSpawnEnemy();
-
     }
 
     // Update is called once per frame

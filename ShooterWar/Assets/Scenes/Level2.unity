@@ -204,7 +204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 975757350}
   - component: {fileID: 975757349}
-  - component: {fileID: 975757351}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -274,21 +273,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &975757351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975757348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d67106b4711037488f28514b4581876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 0
-  overDistance: 0
 --- !u!1 &1297485522
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,13 +353,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeCount: 5
   speedMove: 5
+  RocketDelayAfterShoot: 1.5
   speedEnemy: 0
-  RocketDelayAfterShoot: 0
-  SpeedRocket: 0
-  RocketPrefabLeft: {fileID: 6662324681631833432, guid: da842c1d1bfe7434caf1f429f0fa5008,
-    type: 3}
-  RocketPrefabRight: {fileID: 6662324681631833432, guid: da842c1d1bfe7434caf1f429f0fa5008,
-    type: 3}
+  target: {fileID: 1297485525}
+  overDistance: 0
+  SpeedRocket: 5.3
+  RocketPrefab: {fileID: 0}
   RocketDistanceForward: 0
   RocketDistanceRight: 0
   RocketRotation: {x: 0, y: 0, z: 0}
@@ -425,9 +408,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d67106b4711037488f28514b4581876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LifeCount: 5
+  speedMove: 0
+  RocketDelayAfterShoot: 0
+  speedEnemy: 3
   target: {fileID: 1297485525}
-  speed: 5
-  overDistance: 4
+  overDistance: 3
+  SpeedRocket: 0
+  RocketPrefab: {fileID: 0}
+  RocketDistanceForward: 0
+  RocketDistanceRight: 0
+  RocketRotation: {x: 0, y: 0, z: 0}
+  GameMgr: {fileID: 0}
+  target: {fileID: 1297485525}
+  overDistance: 3
 --- !u!212 &1972244677
 SpriteRenderer:
   m_ObjectHideFlags: 0
