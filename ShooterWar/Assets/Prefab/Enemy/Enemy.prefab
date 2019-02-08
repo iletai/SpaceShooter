@@ -111,12 +111,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeCount: 5
   speedMove: 4.41
-  RocketDelayAfterShoot: 0.8
+  RocketDelayAfterShoot: 1.5
   RocketPrefab: {fileID: 1002764238003779082, guid: 0721efde9406d394c9a896cc061b90a5,
     type: 3}
   RocketDistanceForward: -0.8
   RocketDistanceRight: 0.1
-  RocketRotation: {x: 0, y: 0, z: 0}
+  RocketRotation: {x: 180, y: 0, z: 0}
   GameMgr: {fileID: 0}
   target: {fileID: 0}
   speedEnemy: 2

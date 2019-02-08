@@ -29,7 +29,7 @@ public class AttackManager : MonoBehaviour
 
     protected void ShooterRocket()
     {
-        GameObject.Instantiate(RocketPrefab, transform.position + Vector3.forward * RocketDistanceForward + Vector3.right * RocketDistanceRight,Quaternion.Euler(RocketRotation));
+        GameObject.Instantiate(RocketPrefab, transform.position + Vector3.up * RocketDistanceForward + Vector3.right * RocketDistanceRight,Quaternion.Euler(RocketRotation));
         Invoke("EnableShootRocket", RocketDelayAfterShoot);//this line delay after shoot of enemy or player
     }
     
