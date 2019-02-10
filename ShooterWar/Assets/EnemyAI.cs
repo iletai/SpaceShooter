@@ -17,12 +17,11 @@ public class EnemyAI : AttackManager
 
     void Update()
     {
-            if (Vector2.Distance(transform.position,target.position) > overDistance)
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speedEnemy * Time.deltaTime);
+        if (Vector2.Distance(transform.position,target.position) > overDistance)
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speedEnemy * Time.deltaTime);
 
         if (isCanShoot)
         {
-
             isCanShoot = false;
             SetDelayAfterShoot();
             ShooterRocket();

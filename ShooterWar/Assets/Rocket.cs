@@ -19,9 +19,17 @@ public class Rocket : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (enemyRocket && collision.gameObject.tag == "Enemy")
+        if (!enemyRocket && collision.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
+            Debug.Log("Destroy Rocket");
         }
+        if (enemyRocket && collision.gameObject.tag == "DestroyPoint")
+        {
+            Destroy(this.gameObject);
+            Debug.Log("Destroy Rocket");
+        }
+      // Destroy(this.gameObject);
+        
     }
 }

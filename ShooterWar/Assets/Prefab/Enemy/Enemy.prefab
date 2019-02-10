@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6551366670002005891}
   - component: {fileID: 4090150320896535182}
   - component: {fileID: 6421571794285909145}
+  - component: {fileID: 534884918781618468}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3470154592607903743}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.79, y: 2.01, z: 84.101135}
+  m_LocalPosition: {x: 2.34, y: 2, z: 84.101135}
   m_LocalScale: {x: 0.2212, y: 0.360797, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,7 +96,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &6421571794285909145
 MonoBehaviour:
@@ -116,9 +117,22 @@ MonoBehaviour:
     type: 3}
   RocketDistanceForward: -0.8
   RocketDistanceRight: 0.1
-  RocketRotation: {x: 180, y: 0, z: 0}
+  RocketRotation: {x: 0, y: 0, z: 0}
   GameMgr: {fileID: 0}
   target: {fileID: 0}
   speedEnemy: 2
   overDistance: 1
   delayEnemy: 1.8
+--- !u!65 &534884918781618468
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470154592607903743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.7559557, y: 2.8006432, z: 0.10928646}
+  m_Center: {x: -0.118293114, y: 0.014506947, z: 0.0000015050173}

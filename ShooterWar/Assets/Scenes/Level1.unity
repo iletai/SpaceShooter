@@ -1261,7 +1261,7 @@ PrefabInstance:
     - target: {fileID: 8337803222307059429, guid: d16852d0f6e730a48a970272cdc555ae,
         type: 3}
       propertyPath: RocketDistanceForward
-      value: 0.6
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 8337803222307059429, guid: d16852d0f6e730a48a970272cdc555ae,
         type: 3}
