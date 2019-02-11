@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Spawning")]
     public bool SpawnEnemy;
+    public GameObject DestroyPoint;
     public GameObject Player;
     public List<GameObject> EnemyObject = new List<GameObject>();
     public List<GameObject> SpawnPoint = new List<GameObject>();
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     void TriggerPlayer(bool visible)
     {
         Player.SetActive(visible);
+        DestroyPoint.SetActive(visible);
     }
 
     void EndGamePlay()

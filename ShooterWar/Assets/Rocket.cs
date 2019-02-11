@@ -19,17 +19,17 @@ public class Rocket : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        if (enemyRocket && collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Va cham enemy");
+            Destroy(this.gameObject);
+        }
+
         if (!enemyRocket && collision.gameObject.tag == "Enemy")
         {
+            Debug.Log("Va cham player");
             Destroy(this.gameObject);
-            Debug.Log("Destroy Rocket");
         }
-        if (enemyRocket && collision.gameObject.tag == "DestroyPoint")
-        {
-            Destroy(this.gameObject);
-            Debug.Log("Destroy Rocket");
-        }
-      // Destroy(this.gameObject);
-        
+
     }
 }
