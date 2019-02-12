@@ -8,7 +8,7 @@ public class DestroyPoint : MonoBehaviour
     {
         if (collision.gameObject.tag == "Rocket")
         {
-            Destroy(collision.gameObject);
+             Destroy(collision.gameObject);
             Debug.Log("Destroy GameObject");
         }
 

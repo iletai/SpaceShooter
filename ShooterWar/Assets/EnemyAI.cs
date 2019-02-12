@@ -32,4 +32,14 @@ public class EnemyAI : AttackManager
     {
         RocketDelayAfterShoot = delayEnemy;
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag != "RocketEnemy")
+        {
+             Destroy(this.gameObject);
+
+        }
+
+    }
 }

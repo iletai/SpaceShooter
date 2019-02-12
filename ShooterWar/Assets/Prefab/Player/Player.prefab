@@ -211,8 +211,8 @@ MonoBehaviour:
   RocketDelayAfterShoot: 0.8
   RocketPrefab: {fileID: 345683008046323491, guid: 3d971d4ef4775bc4cb2a3f6e19babe5e,
     type: 3}
-  RocketDistanceForward: 0.6
-  RocketDistanceRight: 0.3
+  RocketDistanceForward: -2.9
+  RocketDistanceRight: 1
   RocketRotation: {x: 0, y: 0, z: 0}
   GameMgr: {fileID: 0}
   GameUI: {fileID: 0}

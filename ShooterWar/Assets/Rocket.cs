@@ -12,24 +12,29 @@ public class Rocket : MonoBehaviour
     {
         ///Detect Weapon of Enemy or Player here
         if (enemyRocket)
+        {
             transform.position = Vector3.Lerp(transform.position, transform.position -= Vector3.up, 8f * Time.deltaTime);
+        }
         else
+        {
             transform.position = Vector3.Lerp(transform.position, transform.position += Vector3.up, 8f * Time.deltaTime);
+            Debug.Log("Shooter Player");
+        }
      }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (enemyRocket && collision.gameObject.tag == "Player")
+        if (!enemyRocket && collision.gameObject.tag != "Player")
         {
             Debug.Log("Va cham enemy");
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
 
-        if (!enemyRocket && collision.gameObject.tag == "Enemy")
+        if (enemyRocket && collision.gameObject.tag != "Enemy")
         {
             Debug.Log("Va cham player");
-            Destroy(this.gameObject);
+             Destroy(this.gameObject);
         }
-
+       
     }
 }
